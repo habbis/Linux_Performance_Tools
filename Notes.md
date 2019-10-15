@@ -1,4 +1,4 @@
-Linux Performance Tools	
+# Linux Performance Tools	
   
 
 Some info about linux performance tools and Methodologies.
@@ -57,10 +57,11 @@ Observability Tools:Basic
 Uptime
 
 One way to print load averages:
-
+```
 $ uptime 
-
+```
  output:
+ 
 
  09:28:02 up  1:44,  2 users,  load average: 0,47, 0,34, 0,34
 
@@ -76,17 +77,18 @@ Load > # of CPUs, may mean CPU saturation
  Don`t spend more than 5 seconds studying these
 
 
-
+```
 top (or htop)
-
+```
 Sytem and per-process interval summary: 
 
-
+```
 $ top 
+```
 
 output: 
 
-
+```
 top - 09:34:56 up  1:51,  2 users,  load average: 0,15, 0,32, 0,33
 Tasks: 361 total,   1 running, 266 sleeping,   0 stopped,   1 zombie
 %Cpu(s):  3,4 us,  1,6 sy,  0,0 ni, 94,7 id,  0,0 wa,  0,0 hi,  0,2 si,  0,0 st
@@ -98,7 +100,7 @@ KiB Swap:   999420 total,   999420 free,        0 used. 16118756 avail Mem
  3571 ebbestad  20   0 4046500 328688 135088 S   8,6  1,6   3:53.04 gnome-shell                                                                                                                                    
  7063 ebbestad  20   0 3253540 405344 136428 S   8,6  2,0   3:01.77 Web Content  
 
-
+```
 
 %CPU is summed across all CPUs 
 
@@ -110,10 +112,12 @@ ps
 
 Process status listing:
 
+```
 $ ps -ef f 
-
+```
 output: 
 
+```
 ebbestad  3386     1  0 08:12 ?        00:00:00 /lib/systemd/systemd --user
 ebbestad  3388  3386  0 08:12 ?        00:00:00 (sd-pam)
 ebbestad  3404     1  0 08:12 ?        00:00:00 /usr/bin/gnome-keyring-daemon --daemonize --login
@@ -131,12 +135,15 @@ ebbestad  3571  3423  4 08:12 tty2     00:04:04 /usr/bin/gnome-shell
 ebbestad  3581     1  0 08:12 ?        00:00:00 /usr/bin/pulseaudio --start --log-target=syslog
 root      3589     2  0 08:12 ?        00:00:00 [krfcommd]
 ebbestad  3603  3571  0 08:12 tty2     00:00:31 ibus-daemon --xim --panel disable
-
+```
 
 Custom fields:
 
+```
 $ ps -eo user,sz,rss,minflt,majflt,pcpu,args
+```
 
+```
 ebbestad 19321  8404   5266      0  0.0 /lib/systemd/systemd --user
 ebbestad 28649  3068     49      0  0.0 (sd-pam)
 ebbestad 109347 8140    525      1  0.0 /usr/bin/gnome-keyring-daemon --daemonize --login
@@ -150,7 +157,7 @@ ebbestad 108005 7956    604      0  0.0 /usr/lib/gvfs/gvfsd-fuse /run/user/1000/
 ebbestad 91939  8840    705      0  0.0 /usr/lib/at-spi2-core/at-spi-bus-launcher
 ebbestad 12513  4284    343      0  0.0 /usr/bin/dbus-daemon --config-file=/usr/share/defaults/at-spi2/accessibility.conf --nofork --print-address 3
 ebbestad 55196  6904    369      0  0.0 /usr/lib/at-spi2-core/at-spi2-registryd --use-gnome-session
-
+```
 
 vmstat
 
